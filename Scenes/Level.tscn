@@ -83,7 +83,6 @@ texture = ExtResource("4_hcp8y")
 centered = false
 
 [node name="Foreground" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(2, 2)
 motion_mirroring = Vector2(598, 0)
 
 [node name="Floor" type="Sprite2D" parent="Foreground"]
