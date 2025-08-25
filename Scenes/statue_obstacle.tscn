@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkjywa6cn6rjm"]
+
+[ext_resource type="Texture2D" uid="uid://b3bnygu5wwi8u" path="res://Sprites/Obstacles/bamboo_forest_object_statue.png" id="1_3xgna"]
+[ext_resource type="Script" uid="uid://do3ousqqu44xs" path="res://Scripts/statue_obstacle.gd" id="1_j32k5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j32k5"]
+size = Vector2(45, 71)
+
+[node name="StatueObstacle" type="Area2D" groups=["Dangerous"]]
+script = ExtResource("1_j32k5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.5, 8)
+scale = Vector2(1.18421, 1.2963)
+texture = ExtResource("1_3xgna")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 7.5)
+shape = SubResource("RectangleShape2D_j32k5")

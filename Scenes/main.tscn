@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bemrfrtecfxvb"]
+
+[ext_resource type="Script" uid="uid://bwbano1us6qj7" path="res://Scripts/main.gd" id="1_8gbba"]
+[ext_resource type="PackedScene" uid="uid://deultjpng3sif" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://bnsx4eqa7i8e0" path="res://Scenes/Level.tscn" id="2_bo1nx"]
+[ext_resource type="Script" uid="uid://7wj8bdlhjjv0" path="res://Scripts/spawn_manager.gd" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://dlr08tdr3dpld" path="res://Scenes/game_over.tscn" id="5_kry3j"]
+[ext_resource type="AudioStream" uid="uid://b0bayvgkha2px" path="res://Sounds/Music/Journey To Ascend.mp3" id="6_21xkr"]
+
+[sub_resource type="GDScript" id="GDScript_21xkr"]
+script/source = "extends AudioStreamPlayer
+"
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_8gbba")
+
+[node name="Level" parent="." instance=ExtResource("2_bo1nx")]
+
+[node name="Player" parent="." instance=ExtResource("1_jjgbg")]
+position = Vector2(28, 234)
+
+[node name="SpawnManager" type="Node2D" parent="."]
+script = ExtResource("4_jjvhh")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LabelScore" type="Label" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 71.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.951629, 0.697448, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Score: 0"
+
+[node name="GameOver" parent="." instance=ExtResource("5_kry3j")]
+
+[node name="BG_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_21xkr")
+autoplay = true
+parameters/looping = false
+script = SubResource("GDScript_21xkr")
+
+[connection signal="timeout" from="SpawnTimer" to="SpawnManager" method="_on_spawn_timer_timeout"]

@@ -1,0 +1,88 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlr08tdr3dpld"]
+
+[ext_resource type="Script" uid="uid://xk6quht0dp1" path="res://Scripts/game_over.gd" id="1_ojehl"]
+
+[node name="GameOver" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_ojehl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.588235)
+
+[node name="LabelTitle" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.05
+anchor_right = 0.5
+anchor_bottom = 0.077
+offset_left = -42.5
+offset_right = 42.5
+offset_bottom = -0.100002
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.529412)
+theme_override_font_sizes/font_size = 30
+text = "Game over"
+
+[node name="LabelScore" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.4
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_right = 42.5
+offset_bottom = -0.100002
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.908211, 0.563706, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.529412)
+theme_override_font_sizes/font_size = 30
+text = "Score:"
+
+[node name="LabelRecord" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.6
+anchor_right = 0.5
+anchor_bottom = 0.6
+offset_left = -42.5
+offset_right = 42.5
+offset_bottom = -0.100002
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.908211, 0.563706, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.529412)
+theme_override_font_sizes/font_size = 30
+text = "Record:"
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.2
+anchor_right = 0.501
+anchor_bottom = 0.327
+offset_left = -46.0
+offset_right = 46.4
+offset_bottom = -0.100006
+grow_horizontal = 2
+theme_override_colors/font_disabled_color = Color(0.99942, 0, 0.0572851, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.99942, 0, 0.0572851, 1)
+theme_override_colors/font_hover_color = Color(0.99942, 0, 0.0572851, 1)
+theme_override_colors/icon_disabled_color = Color(0.99942, 0, 0.0572851, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.99942, 0, 0.0572851, 1)
+theme_override_colors/icon_hover_color = Color(0.99942, 0, 0.0572851, 1)
+theme_override_colors/icon_pressed_color = Color(0.99942, 0, 0.0572851, 1)
+theme_override_colors/icon_focus_color = Color(0.99942, 0, 0.0572851, 1)
+theme_override_colors/icon_normal_color = Color(0.99942, 0, 0.0572851, 1)
+theme_override_colors/font_outline_color = Color(0.99942, 0, 0.0572851, 1)
+theme_override_colors/font_color = Color(0, 0.616308, 0.588059, 1)
+theme_override_colors/font_focus_color = Color(0.44718, 0.450162, 1, 1)
+theme_override_colors/font_pressed_color = Color(6.73831e-07, 0.591625, 0.741333, 1)
+theme_override_font_sizes/font_size = 20
+text = "RESTART"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

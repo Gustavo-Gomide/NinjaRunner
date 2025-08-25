@@ -1,0 +1,145 @@
+[gd_scene load_steps=9 format=3 uid="uid://bnsx4eqa7i8e0"]
+
+[ext_resource type="Texture2D" uid="uid://cjhkqsbsu7r36" path="res://Sprites/World/4.png" id="1_etw40"]
+[ext_resource type="Script" uid="uid://bteib2b84pt1t" path="res://Scripts/level.gd" id="1_tj5wv"]
+[ext_resource type="Texture2D" uid="uid://c23cu06vk44xj" path="res://Sprites/World/1.png" id="2_27ak2"]
+[ext_resource type="Texture2D" uid="uid://1rw4sg2a3ke6" path="res://Sprites/World/2.png" id="3_7kl6s"]
+[ext_resource type="Texture2D" uid="uid://44k7bu3dewko" path="res://Sprites/World/cloud.png" id="3_ienac"]
+[ext_resource type="Texture2D" uid="uid://dojuif8blaaid" path="res://Sprites/World/3.png" id="4_hcp8y"]
+[ext_resource type="Texture2D" uid="uid://bes8kekm8scah" path="res://Sprites/World/bamboo_forest_objects_floor.png" id="5_rqs8y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xylue"]
+size = Vector2(600, 32)
+
+[node name="Level" type="ParallaxBackground"]
+script = ExtResource("1_tj5wv")
+
+[node name="ParalaxBG" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(598, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParalaxBG"]
+scale = Vector2(1.875, 1.655)
+texture = ExtResource("1_etw40")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParalaxBG"]
+scale = Vector2(1.04167, 0.484568)
+texture = ExtResource("3_ienac")
+centered = false
+flip_v = true
+
+[node name="BambooShadow" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(598, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BambooShadow"]
+texture_repeat = 2
+position = Vector2(0, 1)
+scale = Vector2(0.9375, 1.84444)
+texture = ExtResource("2_27ak2")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="BambooShadow"]
+texture_repeat = 2
+position = Vector2(320, 1)
+scale = Vector2(0.871875, 1.85)
+texture = ExtResource("2_27ak2")
+centered = false
+
+[node name="BambooBack" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(598, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BambooBack"]
+texture_repeat = 2
+position = Vector2(0, 1)
+scale = Vector2(1, 1.86111)
+texture = ExtResource("3_7kl6s")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="BambooBack"]
+texture_repeat = 2
+position = Vector2(320, 0)
+scale = Vector2(0.871875, 1.86667)
+texture = ExtResource("3_7kl6s")
+centered = false
+
+[node name="BambooFront" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(598, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BambooFront"]
+texture_repeat = 2
+scale = Vector2(1, 1.95)
+texture = ExtResource("4_hcp8y")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="BambooFront"]
+texture_repeat = 2
+position = Vector2(320, 1.19209e-07)
+scale = Vector2(0.871875, 1.91111)
+texture = ExtResource("4_hcp8y")
+centered = false
+
+[node name="Foreground" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(2, 2)
+motion_mirroring = Vector2(598, 0)
+
+[node name="Floor" type="Sprite2D" parent="Foreground"]
+position = Vector2(0, 268)
+scale = Vector2(0.953125, 1)
+texture = ExtResource("5_rqs8y")
+centered = false
+
+[node name="Floor2" type="Sprite2D" parent="Foreground"]
+position = Vector2(60, 268)
+texture = ExtResource("5_rqs8y")
+centered = false
+
+[node name="Floor3" type="Sprite2D" parent="Foreground"]
+position = Vector2(120, 268)
+texture = ExtResource("5_rqs8y")
+centered = false
+
+[node name="Floor4" type="Sprite2D" parent="Foreground"]
+position = Vector2(180, 268)
+texture = ExtResource("5_rqs8y")
+centered = false
+
+[node name="Floor5" type="Sprite2D" parent="Foreground"]
+position = Vector2(240, 268)
+texture = ExtResource("5_rqs8y")
+centered = false
+
+[node name="Floor6" type="Sprite2D" parent="Foreground"]
+position = Vector2(300, 268)
+texture = ExtResource("5_rqs8y")
+centered = false
+
+[node name="Floor7" type="Sprite2D" parent="Foreground"]
+position = Vector2(360, 268)
+texture = ExtResource("5_rqs8y")
+centered = false
+
+[node name="Floor8" type="Sprite2D" parent="Foreground"]
+position = Vector2(420, 268)
+texture = ExtResource("5_rqs8y")
+centered = false
+
+[node name="Floor9" type="Sprite2D" parent="Foreground"]
+position = Vector2(480, 268)
+texture = ExtResource("5_rqs8y")
+centered = false
+
+[node name="Floor10" type="Sprite2D" parent="Foreground"]
+position = Vector2(540, 268)
+scale = Vector2(0.9375, 1)
+texture = ExtResource("5_rqs8y")
+centered = false
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(300, 284)
+shape = SubResource("RectangleShape2D_xylue")
